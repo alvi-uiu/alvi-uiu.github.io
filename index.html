@@ -1,0 +1,478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="keywords" content="Riasad Alvi, AI safety, agent security, efficient LLMs, United International University, Charles Darwin University">
+<meta name="description" content="Riasad Alvi&#39;s home page">
+<link rel="stylesheet" href="jemdoc.css" type="text/css">
+
+<title>Riasad Alvi&#39;s Homepage</title>
+<link rel="icon" type="image/png" href="images/favicon.png?v=3">
+<style>
+/* Scrollable News list */
+.news-scroll {
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #c9c9c9 transparent;
+}
+.news-scroll::-webkit-scrollbar { width: 5px; }
+.news-scroll::-webkit-scrollbar-track { background: transparent; }
+.news-scroll::-webkit-scrollbar-thumb { background: #c9c9c9; border-radius: 3px; }
+.news-list { list-style: none; padding-left: 0; margin: 0; }
+.news-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0;
+  padding: 9px 0;
+  border-bottom: 1px solid #ececec;
+}
+.news-list li:last-child { border-bottom: none; }
+.news-date { flex: 0 0 104px; color: #666; font-style: italic; white-space: nowrap; }
+.news-text { flex: 1; }
+
+/* Selected publications */
+.pubs { margin: 4px 0 0; }
+.pub {
+  display: grid;
+  grid-template-columns: 238px 1fr;
+  column-gap: 28px;
+  align-items: center;
+  padding: 22px 0;
+  border-bottom: 1px solid #ececec;
+}
+.pub:last-child { border-bottom: none; }
+.pub-thumb img {
+  display: block;
+  width: 232px;
+  height: 122px;
+  padding: 14px;
+  box-sizing: border-box;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid #e4e4df;
+  box-shadow: 4px 4px 8px #dcdcdc;
+}
+.pub-venue {
+  margin: 0 0 2px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #527bbd;
+}
+.pub-title {
+  margin: 0 0 3px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.28;
+  color: #1c1c1e;
+}
+.pub-authors {
+  margin: 0 0 4px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #6a6a72;
+}
+.pub-authors b {
+  color: #1c1c1e;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.pub-affil {
+  margin: 0 0 5px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #6b6b73;
+}
+.pub-affil .dot { margin: 0 5px; color: #a0a0a0; }
+.pub sup { font-size: 0.68em; line-height: 0; }
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 0;
+  font-size: 14px;
+}
+.pub-links a { color: #224b8d; text-decoration: none; }
+.pub-links a:hover { text-decoration: underline; }
+.pub-pending { color: #a0a0a0; }
+.pub-abstract-btn {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: #224b8d;
+  cursor: pointer;
+}
+.pub-abstract-btn:hover { text-decoration: underline; }
+
+/* Abstract window */
+html.abstract-open { overflow: hidden; }
+.abstract-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(20, 20, 20, 0.26);
+  -webkit-backdrop-filter: blur(2.5px);
+  backdrop-filter: blur(2.5px);
+  opacity: 0;
+  transition: opacity 0.24s ease;
+}
+.abstract-overlay[hidden] { display: none; }
+.abstract-overlay.is-open { opacity: 1; }
+.abstract-card {
+  position: relative;
+  width: min(640px, 100%);
+  max-height: 74vh;
+  overflow-y: auto;
+  padding: 26px 30px 28px;
+  background: #ececec;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.10);
+  transform: translateY(14px) scale(0.965);
+  opacity: 0;
+  transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.28s ease;
+  will-change: transform, opacity;
+}
+.abstract-overlay.is-open .abstract-card { transform: none; opacity: 1; }
+.abstract-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 22px;
+  line-height: 32px;
+  text-align: center;
+  color: #666;
+  cursor: pointer;
+}
+.abstract-close:hover { background: rgba(0, 0, 0, 0.07); color: #222; }
+.abstract-venue {
+  margin: 0 34px 6px 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: #527bbd;
+}
+.abstract-title {
+  margin: 0 34px 12px 0;
+  font-size: 17px;
+  line-height: 1.36;
+  color: #1c1c1e;
+}
+.abstract-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #333;
+}
+@media (max-width: 600px) {
+  .abstract-card { padding: 22px 20px 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .abstract-overlay, .abstract-card { transition: none; }
+}
+@media (max-width: 760px) {
+  .pub { grid-template-columns: 1fr; row-gap: 14px; }
+  .pub-title { font-size: 17px; }
+}
+
+/* Rotating globe */
+.globe-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px 0 0;
+  padding-bottom: 14px;
+}
+.globe-stage {
+  position: relative;
+  width: 240px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+}
+.globe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.globe-gl {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.globe.is-dragging { cursor: grabbing; }
+.globe-caption {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+}
+.page-credit {
+  margin: 2px 0 4px;
+  text-align: center;
+  font-size: 11px;
+  color: #777;
+}
+.globe-tip {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  padding: 3px 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-size: 12px;
+  color: #333;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, -135%);
+  transition: opacity 0.12s ease;
+}
+.globe-tip.is-on { opacity: 1; }
+
+@media (max-width: 560px) {
+  body {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 16px;
+  }
+  #layout-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Stack the profile photo above the text instead of letting the fixed
+     250px image force a horizontal scrollbar. */
+  #layout-content > table > tbody > tr {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  #layout-content > table > tbody > tr > td {
+    display: block;
+    width: auto !important;
+  }
+}
+</style>
+</head>
+<body>
+<div id="layout-content" style="margin-top:25px">
+<table width="100%">
+	<tbody>
+		<tr>
+			<td>
+				<div id="toptitle">
+					<h1>Riasad Alvi</h1><h1>
+					<h1><font face="Arial"> আলভী </font></h1>
+				</h1></div>
+
+				<h3>Independent Researcher | CSE Graduate</h3> 
+				<p>
+					AI Safety, Agent Security, and Efficient LLMs <br>
+					United International University <br>
+					Dhaka, Bangladesh<br>
+
+		<p style="text-align:left">
+    <a href="https://scholar.google.com/citations?user=WuGGzcAAAAAJ&amp;hl=en">Google Scholar</a> &nbsp;|&nbsp;
+    <a href="https://aclanthology.org/people/riasad-alvi/">ACL Anthology</a> &nbsp;|&nbsp;
+    <a href="https://orcid.org/0009-0008-8801-1148">ORCID</a> &nbsp;|&nbsp;
+    <a href="https://dblp.org/pid/415/4138">DBLP</a> &nbsp;|&nbsp;
+    <a href="https://www.linkedin.com/in/riasad-alvi-175a5a231/">LinkedIn</a> &nbsp;|&nbsp;
+    <a href="https://github.com/alvi-uiu">Github</a>
+  	</p>
+				</p>
+				</p>
+			</td>
+			<td width="250">
+				<img src="./images/c2-bright.jpeg" border="0" width="250" height="250" alt="Profile photo"><br>
+				<div style="text-align:center; margin-top:4px;">
+					<a href="mailto:ralvi212069@bscse.uiu.ac.bd">Email</a> &nbsp;|&nbsp; <a href="#">CV</a>
+				</div>
+			</td>
+		</tr><tr>
+	</tr></tbody>
+</table>
+
+<h2>Biography </h2>
+<p>
+	I am a Computer Science and Engineering graduate from United International University (UIU), Bangladesh. Previously, I worked as a Research Assistant at the Applied Artificial Intelligence &amp; Intelligent Systems Laboratory, Charles Darwin University, Australia, under the supervision of <a href="https://researchers.cdu.edu.au/en/persons/sami-azam/">Prof. Dr. Sami Azam</a>.
+</p>
+<p>
+	My research primarily focuses on AI Safety, Agent Security, and Efficient LLMs. My research work has resulted in publications in peer-reviewed journals and leading international conferences. I enjoy exploring new problems and ideas, which keeps me curious and drives me to keep learning.
+</p>
+<p>
+	Outside of research, I enjoy watching anime (I'm a big <img src="images/onepiece.png" alt="One Piece" style="height:18px;vertical-align:-3px;"> <i>One Piece</i> fan!), playing video games 🎮, travelling to explore new places and cultures, and trying out different cuisines. I'm also a fitness enthusiast and love cycling, hiking, and running 🏃.
+</p>
+
+<h2>Research Experience</h2>
+<p>
+	<b>Research Assistant</b><span style="margin-left:14px; color:#555;">[04/2025 – 07/2026]</span>
+	<span style="display:block; margin-top:6px;"><b>Applied Artificial Intelligence &amp; Intelligent Systems Laboratory, Charles Darwin University, Australia</b></span>
+</p>
+<ul>
+	<li>Built safety and security frameworks for LLM agents (internal activation probing, skill probing, authorization states, and replanning failure evaluation) alongside multi-agent learning.</li>
+	<li>Worked on improving LLM inference efficiency via Chain-of-Thought reflection suppression and training-free Mixture-of-Experts (MoE) bit allocation.</li>
+</ul>
+	
+<h2>News</h2>
+<div class="news-scroll">
+<ul class="news-list">
+		<li><span class="news-date">Nov 12, 2026</span><span class="news-text">First-author paper accepted to EACL 2027 [Findings | CORE Rank A].</span></li>
+		<li><span class="news-date">Oct 14, 2026</span><span class="news-text">First-author paper accepted to WACV 2027 Main Conference [Algorithms Track | CORE Rank A].</span></li>
+		<li><span class="news-date">Oct 6, 2026</span><span class="news-text">Solo-authored paper accepted to the NeurIPS 2026 Workshop on AIWILD.</span></li>
+		<li><span class="news-date">Sep 6, 2026</span><span class="news-text">Served on the Program Committee for AAAI 2026 Fall Symposium on Trustworthy Agentic Systems (TAS 2026).</span></li>
+		<li><span class="news-date">Jul 20, 2026</span><span class="news-text">Paper accepted in Archives of Computational Methods in Engineering [CiteScore: 34.8, Impact Factor: 12.9].</span></li>
+		<li><span class="news-date">May 21, 2026</span><span class="news-text">First-author paper accepted to the ACL 2026 Workshop on MeLLM.</span></li>
+		<li><span class="news-date">Dec 14, 2025</span><span class="news-text">Paper accepted in Artificial Intelligence Review [CiteScore: 36.1, Impact Factor: 18.8].</span></li>
+		<li><span class="news-date">Jun 23, 2024</span><span class="news-text">Received University Merit Scholarship for Summer 2024.</span></li>
+		<li><span class="news-date">Fall 2024</span><span class="news-text">2nd Runner-Up, System Analysis and Design Lab, UIU CSE Project Show.</span></li>
+		<li><span class="news-date">Fall 2024</span><span class="news-text">3rd Runner-Up, Microprocessor and Microcontroller Lab, UIU CSE Project Show.</span></li>
+		<li><span class="news-date">Summer 2024</span><span class="news-text">1st Runner-Up, Electronics Lab, UIU CSE Project Show.</span></li>
+</ul>
+</div>
+
+
+
+<h2><font> Selected Publications </font> </h2>
+<p style="font-size: 14px; color: gray;">
+    For the full list of publications, please visit my 
+    <a href="https://scholar.google.com/citations?user=WuGGzcAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>.
+</p>
+
+
+<div class="pubs">
+
+<article class="pub">
+	<div class="pub-thumb"><img src="images/papers/egal.png" alt="EGAL pipeline diagram"></div>
+	<div class="pub-body">
+		<p class="pub-venue">EACL 2027 [ Findings ]</p>
+		<h3 class="pub-title">EGAL: Evidence-Grounded Multi-Agent Adversarial Learning at Inference Time for Research Ideation</h3>
+		<p class="pub-authors"><b>Riasad Alvi</b><sup>1</sup>, Md. Ahashan Habib<sup>1</sup>, Md. Faiyaz Abdullah Sayeedi<sup>1,2</sup></p>
+		<p class="pub-affil"><sup>1</sup>United International University, Bangladesh <span class="dot">&middot;</span> <sup>2</sup>BRAC University, Bangladesh</p>
+		<p class="pub-links"><button type="button" class="pub-abstract-btn" data-abstract="abs-egal">Abstract</button> <span class="pub-pending">Paper</span> <a href="https://alvi-uiu.github.io/EGAL/" target="_blank" rel="noopener">Project Page</a> <a href="https://huggingface.co/datasets/alvi77/EGAL-Benchmark-1000" target="_blank" rel="noopener">Dataset</a> <a href="https://github.com/alvi-uiu/EGAL" target="_blank" rel="noopener">Code</a></p>
+	</div>
+	<div class="pub-abstract" id="abs-egal" hidden>Large language models have shown promise in automating research ideation, yet their quality is fundamentally constrained by the frozen parametric knowledge encoded during pretraining. We introduce EGAL (Evidence-Grounded Adversarial Learning), an inference-time multi-agent framework that addresses this limitation by grounding every adversarial optimisation step in dynamically retrieved external evidence. An Optimizer agent converts identified weaknesses into targeted literature queries within the same inference call, injecting retrieved contrasting papers into each subsequent revision step. A Dual-Criterion Discriminator enforces convergence only when the revised idea both improves over the previous iteration and demonstrably addresses the retrieved evidence, preventing surface-quality plateaus from masking unresolved evidence gaps. Across 1,000 papers spanning five scientific domains and nine open-weight language models (7B–685B parameters), EGAL improves feasibility by 22–31% over a parametric adversarial baseline. Over the same baseline, the Evidence Engagement Rate rises from 21% to 68% and the share of ideas free of direct contradiction by the retrieved evidence from 71% to 91%, indicating that the refined ideas explicitly engage the retrieved literature rather than only improving surface fluency.</div>
+</article>
+
+<article class="pub">
+	<div class="pub-thumb"><img src="images/papers/edgr.png" alt="EGDR framework diagram"></div>
+	<div class="pub-body">
+		<p class="pub-venue">WACV 2027 [ Algorithms Track ]</p>
+		<h3 class="pub-title">Entropy-Gated Dynamic Rectification for Object Hallucination in Large Vision-Language Models</h3>
+		<p class="pub-authors"><b>Riasad Alvi</b><sup>1</sup>, Md. Asaduzzaman Shuvo<sup>1</sup>, Md. Ahashan Habib<sup>1</sup>, Md. Faiyaz Abdullah Sayeedi<sup>1,2</sup></p>
+		<p class="pub-affil"><sup>1</sup>United International University, Bangladesh <span class="dot">&middot;</span> <sup>2</sup>BRAC University, Bangladesh</p>
+		<p class="pub-links"><button type="button" class="pub-abstract-btn" data-abstract="abs-edgr">Abstract</button> <span class="pub-pending">Paper</span> <a href="https://alvi-uiu.github.io/EGDR/" target="_blank" rel="noopener">Project Page</a> <a href="https://github.com/alvi-uiu/EGDR" target="_blank" rel="noopener">Code</a></p>
+	</div>
+	<div class="pub-abstract" id="abs-edgr" hidden>Large Vision-Language Models (LVLMs) routinely name objects that are absent from the image. Latent steering can reduce this failure in one model forward pass, but a fixed gate treats early and late decoding steps by the same criterion. We observe that predictive entropy varies sharply within free-running generation, while states that commit to short answers occupy a narrow, confident band. We exploit this temporal mismatch by using uncertainty as a causally available, token-local control signal for an existing steering gate. We propose Entropy-Gated Dynamic Rectification (EGDR), which lowers the intervention threshold when entropy derived from the preceding step's already available logits is high and retains the calibrated operating point when it is low. On LLaVA-1.5-7B, the underlying static gate lowers CHAIR CS/CI from 53.00/15.30 to 32.00/14.30; replacing only its constant threshold with EGDR further lowers them to 29.00/13.60. At a matched 58% intervention rate, the corresponding static control obtains 30.50/14.00. The gain over the static gate holds on LLaVA-NeXT-7B and grows with the generation budget, while POPE scores and general multimodal capability remain effectively unchanged. EGDR requires no additional model forward pass and adds roughly 2% measured latency.</div>
+</article>
+
+<article class="pub">
+	<div class="pub-thumb"><img src="images/papers/deny.png" alt="DENY-LOCK overview diagram"></div>
+	<div class="pub-body">
+		<p class="pub-venue">NeurIPS 2026 Workshop [AIWILD]</p>
+		<h3 class="pub-title">The Denial Illusion: Measuring Safety Failures After Agent Replanning</h3>
+		<p class="pub-authors"><b>Riasad Alvi</b><sup>1</sup></p>
+		<p class="pub-affil"><sup>1</sup>United International University, Dhaka, Bangladesh</p>
+		<p class="pub-links"><button type="button" class="pub-abstract-btn" data-abstract="abs-deny">Abstract</button> <span class="pub-pending">Paper</span> <a href="https://alvi-uiu.github.io/DENY-LOCK/" target="_blank" rel="noopener">Project Page</a></p>
+	</div>
+	<div class="pub-abstract" id="abs-deny" hidden>A rejected tool call does not establish that its forbidden effect was prevented: an agent can continue through another tool, split the operation across calls, or reach the same state through an intermediate resource. We introduce denial-induced route-around and RouteAroundBench, a controlled post-denial benchmark with executable tools and deterministic terminal-state oracles. The study compares three purpose-built controls (exact-call locking, tuple-level locking, and a full-trace language-model guard) across three locally served open-weight models. We also present DENYLOCK, a training-free reference monitor that retains the structured rule responsible for a denial and checks every tentative state transition before atomic commit. Across 120 unsafe tasks and 60 paired benign tasks, exact-call locking permits the forbidden effect in 56.9% of post-denial trials; a trace-aware guard lowers this rate to 20.8%. Under the benchmark's complete mediation assumptions, DENYLOCK prevents every forbidden transition while retaining 91.1% benign recovery. These results distinguish a locally correct denial from trajectory-level policy preservation.</div>
+</article>
+
+<article class="pub">
+	<div class="pub-thumb"><img src="images/papers/multihaludet.png" alt="MultiHaluDet framework diagram"></div>
+	<div class="pub-body">
+		<p class="pub-venue">ACL 2026 Workshop [MeLLM]</p>
+		<h3 class="pub-title">MultiHaluDet: Multilingual Hallucination Detection via LLM Hidden State Probing</h3>
+		<p class="pub-authors"><b>Riasad Alvi</b><sup>1</sup>, Nurul Labib Sayeedi<sup>1</sup>, Md. Faiyaz Abdullah Sayeedi<sup>1,2</sup></p>
+		<p class="pub-affil"><sup>1</sup>United International University, Bangladesh <span class="dot">&middot;</span> <sup>2</sup>BRAC University, Bangladesh</p>
+		<p class="pub-links"><button type="button" class="pub-abstract-btn" data-abstract="abs-multihaludet">Abstract</button> <a href="https://doi.org/10.18653/v1/2026.mellm-1.6" target="_blank" rel="noopener">Paper</a> <a href="https://github.com/alvi-uiu/MultiHaluDet" target="_blank" rel="noopener">Code</a></p>
+	</div>
+	<div class="pub-abstract" id="abs-multihaludet" hidden>Hallucinations in Large Language Models (LLMs) represent a critical barrier to their reliable deployment, a vulnerability heavily exacerbated in non-English and resource-constrained contexts. Existing detection approaches that rely on output confidence heuristics or single-layer internal representations frequently fail to capture deep, complex factual inconsistencies across diverse languages. To address this, we introduce MultiHaluDet, a novel four-stage framework that detects multilingual hallucinations by probing the full hidden state trajectories of frozen LLMs without requiring language-specific fine-tuning. Our method extracts sequential features across multiple layers and processes them via a hybrid architecture using multi-scale attention and self-attention pooling. By generating out-of-fold embeddings that feed into a learned ensemble meta-learner, MultiHaluDet captures both fine-grained and coarse-grained patterns of factual inconsistency. Extensive experiments demonstrate that our framework achieves state-of-the-art detection performance, reaching up to 98.55% AUROC on the English HaluEval and TriviaQA benchmarks using Mistral-7B and LLaMA2-7B architectures. Crucially, we rigorously evaluate our framework's cross-lingual generalization across high (French), medium (Bangla), and low-resource (Amharic) languages. MultiHaluDet demonstrates exceptional representational robustness, consistently outperforming baselines and successfully transferring hallucination detection capabilities across typologically diverse linguistic tiers.</div>
+</article>
+
+<article class="pub">
+	<div class="pub-thumb"><img src="images/papers/review.png" alt="Review taxonomy diagram"></div>
+	<div class="pub-body">
+		<p class="pub-venue">Artificial Intelligence Review</p>
+		<h3 class="pub-title">From language to action: a review of large language models as autonomous agents and tool users</h3>
+		<p class="pub-authors">Sadia Sultana Chowa<sup>1,2,3</sup>, <b>Riasad Alvi</b><sup>2,4</sup>, Subhey Sadi Rahman<sup>2,4</sup>, Md Abdur Rahman<sup>2,4</sup>, Mohaimenul Azam Khan Raiaan<sup>2,4,5</sup>, Md Rafiqul Islam<sup>6</sup>, Mukhtar Hussain<sup>8</sup>, Sami Azam<sup>6,7</sup></p>
+		<p class="pub-affil"><sup>1</sup>Daffodil International University <span class="dot">&middot;</span> <sup>2</sup>AAIINS Laboratory <span class="dot">&middot;</span> <sup>3</sup>Monash University <span class="dot">&middot;</span> <sup>4</sup>United International University <span class="dot">&middot;</span> <sup>5</sup>Monash University <span class="dot">&middot;</span> <sup>6</sup>Charles Darwin University <span class="dot">&middot;</span> <sup>7</sup>Energy and Resources Institute <span class="dot">&middot;</span> <sup>8</sup>Charles Darwin University</p>
+		<p class="pub-links"><button type="button" class="pub-abstract-btn" data-abstract="abs-review">Abstract</button> <a href="https://link.springer.com/article/10.1007/s10462-025-11471-9" target="_blank" rel="noopener">Paper</a></p>
+	</div>
+	<div class="pub-abstract" id="abs-review" hidden>The pursuit of human-level artificial intelligence (AI) has significantly advanced the development of autonomous agents and Large Language Models (LLMs). LLMs are now widely utilized as decision-making agents for their ability to interpret instructions, manage sequential tasks, and adapt through feedback. This review examines recent developments in employing LLMs as autonomous agents and tool users and comprises seven research questions. We only used the papers published between 2023 and 2025 in conferences of the A* and A-ranked and Q1 journals. A structured analysis of the LLM agents' architectural design principles, dividing their applications into single-agent and multi-agent systems, and strategies for integrating external tools is presented. In addition, the cognitive mechanisms of LLMs, including reasoning, planning, and memory, and the impact of prompting methods and fine-tuning procedures on agent performance are also investigated. Furthermore, we have evaluated current benchmarks and assessment protocols and provided an analysis of 68 publicly available datasets to assess the performance of LLM-based agents in various tasks. In conducting this review, we have identified critical findings on verifiable reasoning of LLMs, the capacity for self-improvement, and the personalization of LLM-based agents. Finally, we have discussed ten future research directions to overcome these gaps.</div>
+</article>
+
+</div>
+
+<h2>Education</h2>
+<p>
+	<b>Bachelor of Science in Computer Science and Engineering</b>
+	<span style="display:block; margin-top:3px; color:#555;">[Fall 2021 &ndash; Spring 2026]</span>
+	<span style="display:block; margin-top:6px;">United International University, Bangladesh</span>
+	<span style="display:block; margin-top:3px;">Major in Data Science [Major CGPA: 4.00/4.00]</span>
+	<span style="display:block; margin-top:3px;">CGPA: 3.75/4.00 [last 6 trimesters avg: 3.91]</span>
+</p>
+
+<h2><font> Professional Activities </font></h2>
+<h3> Reviewer </h3>
+<ul>
+<li> <span style="white-space:nowrap">WWW 2027 Main Conference</span>, <span style="white-space:nowrap">NAACL 2027 SRW</span>, <span style="white-space:nowrap">AAAI 2026 Workshop @ Trust4RSI-Agent</span>,<br>
+<span style="white-space:nowrap">AAAI 2026 Workshop @ SAFE</span>, <span style="white-space:nowrap">EMNLP 2026 Workshop @ REALM</span>.
+</li>
+</ul>
+
+<h3> Program Committee </h3>
+<ul>
+
+<li> AAAI 2026 Fall Symposium on Trustworthy Agentic Systems (TAS 2026)
+</li>
+</ul>
+
+<h2>Get in Touch</h2>
+<p>
+	Feel free to reach out via email anytime if you'd like to chat about research, explore collaborations, or simply say hi. I'm always glad to meet new people and learn from different perspectives, and if we're ever in the same city, I'd love to grab coffee or tea!
+</p>
+
+<div class="globe-wrap">
+	<div class="globe-stage">
+		<canvas class="globe" id="globe" width="240" height="240" role="img" aria-label="Rotating globe marking the countries that have cited Riasad Alvi's research"></canvas>
+		<canvas class="globe-gl" id="globe-gl" aria-hidden="true"></canvas>
+	</div>
+	<div class="globe-caption">Grateful to see my work cited across <strong><span id="globe-count">47</span> countries</strong>.</div>
+</div>
+
+<div class="page-credit">&copy; Riasad Alvi | Last updated: November, 2026.</div>
+
+<div class="abstract-overlay" id="abstract-overlay" hidden>
+	<div class="abstract-card" role="dialog" aria-modal="true" aria-labelledby="abstract-title">
+		<button type="button" class="abstract-close" id="abstract-close" aria-label="Close abstract">&times;</button>
+		<div class="abstract-venue" id="abstract-venue"></div>
+		<h3 class="abstract-title" id="abstract-title"></h3>
+		<p class="abstract-text" id="abstract-text"></p>
+	</div>
+</div>
+
+<script src="globe.js"></script>
+<script src="abstracts.js"></script>
+</body></html>
+</html>

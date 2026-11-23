@@ -229,22 +229,32 @@ html.abstract-open { overflow: hidden; }
   color: #777;
   text-align: center;
 }
-.page-motto {
-  margin: 10px 0 6px;
-  text-align: center;
-  font-size: 12px;
-  font-style: italic;
-  color: #777;
-}
 .page-credit {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: baseline;
-  flex-wrap: wrap;
   gap: 4px 16px;
-  margin: 2px 0 4px;
+  margin: 12px 0 4px;
   font-size: 11px;
   color: #777;
+}
+.page-credit > span:last-child { text-align: right; }
+.page-motto {
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+}
+@media (max-width: 700px) {
+  .page-credit {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 3px;
+  }
+  .page-motto {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  .page-credit > span:first-child { grid-row: 2; }
+  .page-credit > span:last-child { grid-row: 2; }
 }
 .globe-tip {
   position: absolute;
@@ -477,9 +487,7 @@ html.abstract-open { overflow: hidden; }
 	<div class="globe-caption">Grateful to see my work cited across <strong><span id="globe-count">47</span> countries</strong>.</div>
 </div>
 
-<div class="page-motto">Forged by the storms. Driven by the dawn.</div>
-
-<div class="page-credit"><span>&copy; Riasad Alvi</span><span>Last updated: November, 2026.</span></div>
+<div class="page-credit"><span>&copy; Riasad Alvi</span><span class="page-motto">Forged by the storms. Driven by the dawn.</span><span>Last updated: November, 2026.</span></div>
 
 <div class="abstract-overlay" id="abstract-overlay" hidden>
 	<div class="abstract-card" role="dialog" aria-modal="true" aria-labelledby="abstract-title">

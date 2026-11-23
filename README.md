@@ -1,7 +1,6 @@
 # Riasad Alvi — Homepage
 
-Static academic homepage, hosted at <https://alvi-uiu.github.io/>. No build step and no
-external requests at runtime.
+Static academic homepage, hosted at <https://alvi-uiu.github.io/>. No build step.
 
 ## Structure
 

@@ -16,7 +16,7 @@
 <style>
 html { color-scheme: only light; }
 
-body { position: relative; }
+body { position: relative; padding-bottom: 54px; }
 
 /* Scrollable News list */
 .news-scroll {
@@ -242,6 +242,18 @@ html.abstract-open { overflow: hidden; }
   margin: 12px 0 4px;
   font-size: 11px;
   color: #777;
+}
+.page-credit-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.hit-counter {
+  display: block;
+  height: 18px;
+  width: auto;
+  opacity: 0.9;
 }
 .page-motto {
   position: absolute;
@@ -485,7 +497,7 @@ html.abstract-open { overflow: hidden; }
 	<div class="globe-caption">Grateful to see my work cited across <strong><span id="globe-count">47</span> countries</strong>.</div>
 </div>
 
-<div class="page-credit"><span>&copy; Riasad Alvi</span><span>Last updated: November, 2026.</span></div>
+<div class="page-credit"><span class="page-credit-left"><span>&copy; Riasad Alvi</span><img class="hit-counter" src="https://hits.sh/alvi-uiu.github.io/visits.svg?label=+&amp;style=flat&amp;color=8a8a8a" alt="Page views" height="18" onerror="this.style.display='none'"></span><span>Last updated: November, 2026.</span></div>
 
 <div class="page-motto">“Forged by the storms. Driven by the dawn.”</div>
 

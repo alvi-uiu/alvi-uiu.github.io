@@ -13,6 +13,8 @@
 <title>Riasad Alvi&#39;s Homepage</title>
 <link rel="icon" type="image/png" href="images/favicon.png?v=3">
 <style>
+body { position: relative; }
+
 /* Scrollable News list */
 .news-scroll {
   max-height: 380px;
@@ -230,22 +232,24 @@ html.abstract-open { overflow: hidden; }
   text-align: center;
 }
 .page-credit {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: baseline;
-  row-gap: 12px;
+  gap: 4px 16px;
   margin: 12px 0 4px;
   font-size: 11px;
   color: #777;
 }
-.page-credit > span:first-child { grid-row: 1; }
-.page-credit > span:last-child { grid-row: 1; text-align: right; }
 .page-motto {
-  grid-column: 1 / -1;
-  grid-row: 2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 9px;
   text-align: center;
+  font-size: 11px;
   font-style: italic;
   font-weight: bold;
+  color: #777;
 }
 .globe-tip {
   position: absolute;
@@ -478,7 +482,9 @@ html.abstract-open { overflow: hidden; }
 	<div class="globe-caption">Grateful to see my work cited across <strong><span id="globe-count">47</span> countries</strong>.</div>
 </div>
 
-<div class="page-credit"><span>&copy; Riasad Alvi</span><span class="page-motto">“Forged by the storms. Driven by the dawn.”</span><span>Last updated: November, 2026.</span></div>
+<div class="page-credit"><span>&copy; Riasad Alvi</span><span>Last updated: November, 2026.</span></div>
+
+<div class="page-motto">“Forged by the storms. Driven by the dawn.”</div>
 
 <div class="abstract-overlay" id="abstract-overlay" hidden>
 	<div class="abstract-card" role="dialog" aria-modal="true" aria-labelledby="abstract-title">

@@ -230,8 +230,12 @@ html.abstract-open { overflow: hidden; }
   text-align: center;
 }
 .page-credit {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 16px;
   margin: 2px 0 4px;
-  text-align: center;
   font-size: 11px;
   color: #777;
 }
@@ -466,7 +470,7 @@ html.abstract-open { overflow: hidden; }
 	<div class="globe-caption">Grateful to see my work cited across <strong><span id="globe-count">47</span> countries</strong>.</div>
 </div>
 
-<div class="page-credit">&copy; Riasad Alvi | Last updated: November, 2026.</div>
+<div class="page-credit"><span>&copy; Riasad Alvi</span><span>Last updated: November, 2026.</span></div>
 
 <div class="abstract-overlay" id="abstract-overlay" hidden>
 	<div class="abstract-card" role="dialog" aria-modal="true" aria-labelledby="abstract-title">
